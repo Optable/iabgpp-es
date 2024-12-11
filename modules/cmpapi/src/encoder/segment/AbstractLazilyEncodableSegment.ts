@@ -23,39 +23,20 @@ export abstract class AbstractLazilyEncodableSegment<T extends Fields<any>> impl
   public abstract getFieldNames(): string[];
 
   //Overriden
-  public validate(): void {}
+  public validate(): void { }
 
   public hasField(fieldName: string): boolean {
     return this.fields.containsKey(fieldName);
   }
 
   public getFieldValue(fieldName: string): any {
-    if (!this.decoded) {
-      this.decodeSegment(this.encodedString, this.fields);
-      this.dirty = false;
-      this.decoded = true;
-    }
-
-    if (this.fields.containsKey(fieldName)) {
-      return this.fields.get(fieldName).getValue();
-    } else {
-      throw new InvalidFieldError("Invalid field: '" + fieldName + "'");
-    }
+    return this.getField(fieldName).getValue();
   }
 
   public setFieldValue(fieldName: string, value: any): void {
-    if (!this.decoded) {
-      this.decodeSegment(this.encodedString, this.fields);
-      this.dirty = false;
-      this.decoded = true;
-    }
-
-    if (this.fields.containsKey(fieldName)) {
-      this.fields.get(fieldName).setValue(value);
-      this.dirty = true;
-    } else {
-      throw new InvalidFieldError(fieldName + " not found");
-    }
+    const field = this.getField(fieldName);
+    this.dirty = true;
+    field.setValue(value);
   }
 
   //Overriden
@@ -64,7 +45,7 @@ export abstract class AbstractLazilyEncodableSegment<T extends Fields<any>> impl
     let fieldNames: string[] = this.getFieldNames();
     for (let i = 0; i < fieldNames.length; i++) {
       let fieldName = fieldNames[i];
-      let value = this.getFieldValue(fieldName);
+      let value = this.getField(fieldName).toObj();
       obj[fieldName] = value;
     }
     return obj;
@@ -86,4 +67,19 @@ export abstract class AbstractLazilyEncodableSegment<T extends Fields<any>> impl
     this.dirty = false;
     this.decoded = false;
   }
+
+  private getField(fieldName: string): any {
+    if (!this.decoded) {
+      this.decodeSegment(this.encodedString, this.fields);
+      this.dirty = false;
+      this.decoded = true;
+    }
+
+    if (this.fields.containsKey(fieldName)) {
+      return this.fields.get(fieldName);
+    } else {
+      throw new InvalidFieldError("Invalid field: '" + fieldName + "'");
+    }
+  }
+
 }

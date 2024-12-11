@@ -33,6 +33,10 @@ export abstract class AbstractEncodableBitStringDataType<T> implements Encodable
     }
   }
 
+  public toObj(): any {
+    return this.getValue();
+  }
+
   public getHardFailIfMissing(): boolean {
     return this.hardFailIfMissing;
   }

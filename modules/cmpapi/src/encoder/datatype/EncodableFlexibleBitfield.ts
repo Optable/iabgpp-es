@@ -39,6 +39,17 @@ export class EncodableFlexibleBitfield extends AbstractEncodableBitStringDataTyp
   }
 
   // Overriden
+  public toObj(): any {
+    const result = [];
+    for (let i = 0; i < this.value.length; i++) {
+      if (this.value[i]) {
+        result.push(i + 1);
+      }
+    }
+    return result;
+  }
+
+  // Overriden
   public getValue(): boolean[] {
     return [...super.getValue()];
   }
