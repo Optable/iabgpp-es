@@ -26,6 +26,14 @@ export class TcfEuV2VendorsAllowedSegment extends AbstractLazilyEncodableSegment
   }
 
   // overriden
+  public toObj(): any {
+    return {
+      SegmentType: 1,
+      ...super.toObj(),
+    }
+  }
+
+  // overriden
   protected initializeFields(): EncodableBitStringFields {
     let fields: EncodableBitStringFields = new EncodableBitStringFields();
     fields.put(TcfEuV2Field.VENDORS_ALLOWED_SEGMENT_TYPE.toString(), new EncodableFixedInteger(3, 2));

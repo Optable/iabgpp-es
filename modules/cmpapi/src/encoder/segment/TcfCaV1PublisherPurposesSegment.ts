@@ -127,4 +127,12 @@ export class TcfCaV1PublisherPurposesSegment extends AbstractLazilyEncodableSegm
       throw new DecodingError("Unable to decode TcfCaV1PublisherPurposesSegment '" + encodedString + "'");
     }
   }
+
+  // overriden
+  public toObj(): any {
+    return {
+      SubsectionType: 3,
+      ...super.toObj(),
+    }
+  }
 }

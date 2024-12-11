@@ -27,6 +27,14 @@ export class TcfEuV2PublisherPurposesSegment extends AbstractLazilyEncodableSegm
   }
 
   // overriden
+  public toObj(): any {
+    return {
+      SegmentType: 3,
+      ...super.toObj(),
+    }
+  }
+
+  // overriden
   protected initializeFields(): EncodableBitStringFields {
     let fields: EncodableBitStringFields = new EncodableBitStringFields();
     fields.put(TcfEuV2Field.PUBLISHER_PURPOSES_SEGMENT_TYPE.toString(), new EncodableFixedInteger(3, 3));
