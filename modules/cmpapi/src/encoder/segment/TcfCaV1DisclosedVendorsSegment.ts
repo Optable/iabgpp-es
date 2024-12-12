@@ -28,8 +28,8 @@ export class TcfCaV1DisclosedVendorsSegment extends AbstractLazilyEncodableSegme
   // overriden
   public toObj(): any {
     return {
-      SubsectionType: this.getFieldValue(TcfCaV1Field.DISCLOSED_VENDORS_SEGMENT_TYPE),
-      DisclosedVendors: this.getFieldValue(TcfCaV1Field.DISCLOSED_VENDORS),
+      SubsectionType: this.getFieldObj(TcfCaV1Field.DISCLOSED_VENDORS_SEGMENT_TYPE),
+      DisclosedVendors: this.getFieldObj(TcfCaV1Field.DISCLOSED_VENDORS),
     }
   }
 

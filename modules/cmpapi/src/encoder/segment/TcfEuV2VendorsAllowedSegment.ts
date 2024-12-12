@@ -28,8 +28,8 @@ export class TcfEuV2VendorsAllowedSegment extends AbstractLazilyEncodableSegment
   // overriden
   public toObj(): any {
     return {
-      SegmentType: this.getFieldValue(TcfEuV2Field.VENDORS_ALLOWED_SEGMENT_TYPE),
-      AllowedVendors: this.getFieldValue(TcfEuV2Field.VENDORS_ALLOWED),
+      SegmentType: this.getFieldObj(TcfEuV2Field.VENDORS_ALLOWED_SEGMENT_TYPE),
+      AllowedVendors: this.getFieldObj(TcfEuV2Field.VENDORS_ALLOWED),
     }
   }
 

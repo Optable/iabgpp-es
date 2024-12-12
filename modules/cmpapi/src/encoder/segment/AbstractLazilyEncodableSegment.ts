@@ -33,6 +33,10 @@ export abstract class AbstractLazilyEncodableSegment<T extends Fields<any>> impl
     return this.getField(fieldName).getValue();
   }
 
+  public getFieldObj(fieldName: string): any {
+    return this.getField(fieldName).toObj();
+  }
+
   public setFieldValue(fieldName: string, value: any): void {
     const field = this.getField(fieldName);
     this.dirty = true;
