@@ -15,6 +15,9 @@ export class AbstractLazilyEncodableSegment {
     getFieldValue(fieldName) {
         return this.getField(fieldName).getValue();
     }
+    getFieldObj(fieldName) {
+        return this.getField(fieldName).toObj();
+    }
     setFieldValue(fieldName, value) {
         const field = this.getField(fieldName);
         this.dirty = true;

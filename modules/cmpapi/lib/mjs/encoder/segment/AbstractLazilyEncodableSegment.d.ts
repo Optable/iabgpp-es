@@ -13,6 +13,7 @@ export declare abstract class AbstractLazilyEncodableSegment<T extends Fields<an
     validate(): void;
     hasField(fieldName: string): boolean;
     getFieldValue(fieldName: string): any;
+    getFieldObj(fieldName: string): any;
     setFieldValue(fieldName: string, value: any): void;
     toObj(): any;
     encode(): string;

@@ -29,22 +29,22 @@ export class TcfCaV1CoreSegment extends AbstractLazilyEncodableSegment {
     //Overriden
     toObj() {
         return {
-            Version: this.getFieldValue(TcfCaV1Field.VERSION),
-            Created: this.getFieldValue(TcfCaV1Field.CREATED),
-            LastUpdated: this.getFieldValue(TcfCaV1Field.LAST_UPDATED),
-            CmpId: this.getFieldValue(TcfCaV1Field.CMP_ID),
-            CmpVersion: this.getFieldValue(TcfCaV1Field.CMP_VERSION),
-            ConsentScreen: this.getFieldValue(TcfCaV1Field.CONSENT_SCREEN),
-            ConsentLanguage: this.getFieldValue(TcfCaV1Field.CONSENT_LANGUAGE),
-            VendorListVersion: this.getFieldValue(TcfCaV1Field.VENDOR_LIST_VERSION),
-            TcfPolicyVersion: this.getFieldValue(TcfCaV1Field.TCF_POLICY_VERSION),
-            UseNonStandardStacks: this.getFieldValue(TcfCaV1Field.USE_NON_STANDARD_STACKS),
-            SpecialFeatureExpressConsent: this.getFieldValue(TcfCaV1Field.SPECIAL_FEATURE_EXPRESS_CONSENT),
-            PurposesExpressConsent: this.getFieldValue(TcfCaV1Field.PURPOSES_EXPRESS_CONSENT),
-            PurposesImpliedConsent: this.getFieldValue(TcfCaV1Field.PURPOSES_IMPLIED_CONSENT),
-            VendorExpressConsent: this.getFieldValue(TcfCaV1Field.VENDOR_EXPRESS_CONSENT),
-            VendorImpliedConsent: this.getFieldValue(TcfCaV1Field.VENDOR_IMPLIED_CONSENT),
-            PubRestrictions: this.getFieldValue(TcfCaV1Field.PUB_RESTRICTIONS),
+            Version: this.getFieldObj(TcfCaV1Field.VERSION),
+            Created: this.getFieldObj(TcfCaV1Field.CREATED),
+            LastUpdated: this.getFieldObj(TcfCaV1Field.LAST_UPDATED),
+            CmpId: this.getFieldObj(TcfCaV1Field.CMP_ID),
+            CmpVersion: this.getFieldObj(TcfCaV1Field.CMP_VERSION),
+            ConsentScreen: this.getFieldObj(TcfCaV1Field.CONSENT_SCREEN),
+            ConsentLanguage: this.getFieldObj(TcfCaV1Field.CONSENT_LANGUAGE),
+            VendorListVersion: this.getFieldObj(TcfCaV1Field.VENDOR_LIST_VERSION),
+            TcfPolicyVersion: this.getFieldObj(TcfCaV1Field.TCF_POLICY_VERSION),
+            UseNonStandardStacks: this.getFieldObj(TcfCaV1Field.USE_NON_STANDARD_STACKS),
+            SpecialFeatureExpressConsent: this.getFieldObj(TcfCaV1Field.SPECIAL_FEATURE_EXPRESS_CONSENT),
+            PurposesExpressConsent: this.getFieldObj(TcfCaV1Field.PURPOSES_EXPRESS_CONSENT),
+            PurposesImpliedConsent: this.getFieldObj(TcfCaV1Field.PURPOSES_IMPLIED_CONSENT),
+            VendorExpressConsent: this.getFieldObj(TcfCaV1Field.VENDOR_EXPRESS_CONSENT),
+            VendorImpliedConsent: this.getFieldObj(TcfCaV1Field.VENDOR_IMPLIED_CONSENT),
+            PubRestrictions: this.getFieldObj(TcfCaV1Field.PUB_RESTRICTIONS),
         };
     }
     // overriden

@@ -24,12 +24,12 @@ export class TcfEuV2PublisherPurposesSegment extends AbstractLazilyEncodableSegm
     // overriden
     toObj() {
         return {
-            SegmentType: this.getFieldValue(TcfEuV2Field.PUBLISHER_PURPOSES_SEGMENT_TYPE),
-            PubPurposesConsent: this.getFieldValue(TcfEuV2Field.PUBLISHER_CONSENTS),
-            PubPurposesLITransparency: this.getFieldValue(TcfEuV2Field.PUBLISHER_LEGITIMATE_INTERESTS),
-            NumCustomPurposes: this.getFieldValue(TcfEuV2Field.NUM_CUSTOM_PURPOSES),
-            CustomPurposesConsent: this.getFieldValue(TcfEuV2Field.PUBLISHER_CUSTOM_CONSENTS),
-            CustomPurposesLITransparency: this.getFieldValue(TcfEuV2Field.PUBLISHER_CUSTOM_LEGITIMATE_INTERESTS),
+            SegmentType: this.getFieldObj(TcfEuV2Field.PUBLISHER_PURPOSES_SEGMENT_TYPE),
+            PubPurposesConsent: this.getFieldObj(TcfEuV2Field.PUBLISHER_CONSENTS),
+            PubPurposesLITransparency: this.getFieldObj(TcfEuV2Field.PUBLISHER_LEGITIMATE_INTERESTS),
+            NumCustomPurposes: this.getFieldObj(TcfEuV2Field.NUM_CUSTOM_PURPOSES),
+            CustomPurposesConsent: this.getFieldObj(TcfEuV2Field.PUBLISHER_CUSTOM_CONSENTS),
+            CustomPurposesLITransparency: this.getFieldObj(TcfEuV2Field.PUBLISHER_CUSTOM_LEGITIMATE_INTERESTS),
         };
     }
     // overriden
