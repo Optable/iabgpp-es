@@ -5,6 +5,7 @@ export declare class TcfEuV2VendorsDisclosedSegment extends AbstractLazilyEncoda
     private bitStringEncoder;
     constructor(encodedString?: string);
     getFieldNames(): string[];
+    toObj(): any;
     protected initializeFields(): EncodableBitStringFields;
     protected encodeSegment(fields: EncodableBitStringFields): string;
     protected decodeSegment(encodedString: string, fields: EncodableBitStringFields): void;

@@ -109,8 +109,12 @@ export class TcfCaV1PublisherPurposesSegment extends AbstractLazilyEncodableSegm
     // overriden
     toObj() {
         return {
-            SubsectionType: 3,
-            ...super.toObj(),
+            SubsectionType: this.getFieldValue(TcfCaV1Field.PUB_PURPOSES_SEGMENT_TYPE),
+            PubPurposesExpressConsent: this.getFieldValue(TcfCaV1Field.PUB_PURPOSES_EXPRESS_CONSENT),
+            PubPurposesImpliedConsent: this.getFieldValue(TcfCaV1Field.PUB_PURPOSES_IMPLIED_CONSENT),
+            NumCustomPurposes: this.getFieldValue(TcfCaV1Field.NUM_CUSTOM_PURPOSES),
+            CustomPurposesExpressConsent: this.getFieldValue(TcfCaV1Field.CUSTOM_PURPOSES_EXPRESS_CONSENT),
+            CustomPurposesImpliedConsent: this.getFieldValue(TcfCaV1Field.CUSTOM_PURPOSES_IMPLIED_CONSENT),
         };
     }
 }
