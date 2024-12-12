@@ -32,6 +32,31 @@ export class TcfEuV2CoreSegment extends AbstractLazilyEncodableSegment<Encodable
   }
 
   // overriden
+  public toObj(): any {
+    return {
+      Version: this.getFieldValue(TcfEuV2Field.VERSION),
+      Created: this.getFieldValue(TcfEuV2Field.CREATED),
+      LastUpdated: this.getFieldValue(TcfEuV2Field.LAST_UPDATED),
+      CmpId: this.getFieldValue(TcfEuV2Field.CMP_ID),
+      CmpVersion: this.getFieldValue(TcfEuV2Field.CMP_VERSION),
+      ConsentScreen: this.getFieldValue(TcfEuV2Field.CONSENT_SCREEN),
+      ConsentLanguage: this.getFieldValue(TcfEuV2Field.CONSENT_LANGUAGE),
+      VendorListVersion: this.getFieldValue(TcfEuV2Field.VENDOR_LIST_VERSION),
+      TcfPolicyVersion: this.getFieldValue(TcfEuV2Field.POLICY_VERSION),
+      IsServiceSpecific: this.getFieldValue(TcfEuV2Field.IS_SERVICE_SPECIFIC),
+      UseNonStandardTexts: this.getFieldValue(TcfEuV2Field.USE_NON_STANDARD_STACKS),
+      SpecialFeatureOptins: this.getFieldValue(TcfEuV2Field.SPECIAL_FEATURE_OPTINS),
+      PurposeConsent: this.getFieldValue(TcfEuV2Field.PURPOSE_CONSENTS),
+      PurposesLITransparency: this.getFieldValue(TcfEuV2Field.PURPOSE_LEGITIMATE_INTERESTS),
+      PurposeOneTreatment: this.getFieldValue(TcfEuV2Field.PURPOSE_ONE_TREATMENT),
+      PublisherCC: this.getFieldValue(TcfEuV2Field.PUBLISHER_COUNTRY_CODE),
+      VendorConsent: this.getFieldValue(TcfEuV2Field.VENDOR_CONSENTS),
+      VendorLegitimateInterest: this.getFieldValue(TcfEuV2Field.VENDOR_LEGITIMATE_INTERESTS),
+      PubRestrictions: this.getFieldValue(TcfEuV2Field.PUBLISHER_RESTRICTIONS),
+    }
+  }
+
+  // overriden
   protected initializeFields(): EncodableBitStringFields {
     let date = new Date();
 

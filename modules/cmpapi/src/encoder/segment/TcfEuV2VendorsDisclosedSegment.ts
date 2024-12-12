@@ -26,6 +26,14 @@ export class TcfEuV2VendorsDisclosedSegment extends AbstractLazilyEncodableSegme
   }
 
   // overriden
+  public toObj(): any {
+    return {
+      SegmentType: this.getFieldValue(TcfEuV2Field.VENDORS_DISCLOSED_SEGMENT_TYPE),
+      DisclosedVendors: this.getFieldValue(TcfEuV2Field.VENDORS_DISCLOSED),
+    }
+  }
+
+  // overriden
   protected initializeFields(): EncodableBitStringFields {
     let fields: EncodableBitStringFields = new EncodableBitStringFields();
     fields.put(TcfEuV2Field.VENDORS_DISCLOSED_SEGMENT_TYPE.toString(), new EncodableFixedInteger(3, 1));
